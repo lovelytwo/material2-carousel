@@ -114,10 +114,10 @@ export class MatCarouselComponent
   @ContentChildren(MatCarouselSlideComponent) public slidesList: QueryList<
     MatCarouselSlideComponent
   >;
-  @ViewChild('carouselContainer') private carouselContainer: ElementRef<
+  @ViewChild('carouselContainer', {static: false}) private carouselContainer: ElementRef<
     HTMLDivElement
   >;
-  @ViewChild('carouselList') private carouselList: ElementRef<HTMLElement>;
+  @ViewChild('carouselList', {static: false}) private carouselList: ElementRef<HTMLElement>;
   public listKeyManager: ListKeyManager<MatCarouselSlideComponent>;
 
   private _autoplay = true;
@@ -225,11 +225,11 @@ export class MatCarouselComponent
     this.startTimer(this._autoplay);
   }
 
-  @HostListener('mousewheel', ['$event'])
+  @HostListener('wheel', ['$event'])
   public onMouseWheel(event: MouseWheelEvent): void {
     if (this.useMouseWheel) {
       event.preventDefault(); // prevent window to scroll
-      const Δ = Math.sign(event.wheelDelta);
+      const Δ = Math.sign(event.deltaY);
 
       if (Δ < 0) {
         this.next();
