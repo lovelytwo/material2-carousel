@@ -188,7 +188,12 @@
           <mat-carousel-slide
             #matCarouselSlide
             *ngFor="let slide of slidesList; let i = index"
-            image="assets/demo.png"
+            [image]="spriteDemo ? 'assets/demosprite.png' : 'assets/demo.png'"
+            [spriteOffsetX]="spriteDemo ? i * 1920 : 0"
+            spriteOffsetY="0"
+            [spriteWidth]="spriteDemo ? 1920 : 0"
+            [spriteHeight]="spriteDemo ? 480 : 0"
+            spriteCenter="true"
             [overlayColor]="overlayColor"
             [hideOverlay]="hideOverlay"
           >

@@ -19,6 +19,7 @@ export class AppComponent {
   public slidesList = new Array<never>(5);
   public showContent = false;
 
+  public spriteDemo = true;
   public timings = '250ms ease-in';
   public autoplay = true;
   public interval = 5000;

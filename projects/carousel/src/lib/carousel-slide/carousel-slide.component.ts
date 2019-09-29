@@ -48,7 +48,7 @@ export class MatCarouselSlideComponent
   }
 
   public adjustSprite(): void {
-    if(this.image) {
+    if(!this.image) {
       return;
     }
 
