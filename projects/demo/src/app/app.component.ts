@@ -19,7 +19,7 @@ export class AppComponent {
   public slidesList = new Array<never>(5);
   public showContent = false;
 
-  public spriteDemo = true;
+  public spriteDemo = false;
   public timings = '250ms ease-in';
   public autoplay = true;
   public interval = 5000;
@@ -43,6 +43,19 @@ export class AppComponent {
   public darkMode = false;
 
   public get code(): string {
+    let spriteBlock = `    
+    [image]="slide.image"
+    `
+
+    if (this.spriteDemo)
+      spriteBlock = `    [image]="slidesprite.image"
+    [spriteOffsetX]="i * 1920"
+    spriteOffsetY="0"
+    spriteWidth="1920"
+    spriteHeight="480"
+    spriteCenter="true"
+    `
+
     return `
 <mat-carousel
   timings="${this.timings}"
@@ -62,8 +75,7 @@ export class AppComponent {
   <mat-carousel-slide
     #matCarouselSlide
     *ngFor="let slide of slides; let i = index"
-    [image]="slide.image"
-    overlayColor="${this.overlayColor}"
+${spriteBlock}overlayColor="${this.overlayColor}"
     [hideOverlay]="${this.hideOverlay}"
   >${this.showContent ? this.innerCode : ''}</mat-carousel-slide>
 </mat-carousel>
