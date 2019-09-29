@@ -4,7 +4,7 @@
 [![Live demo](https://img.shields.io/badge/demo-blue.svg)](https://gbrlsnchs.github.io/material2-carousel/)
 
 ## About
-This package is a carousel component for Angular using Material Design.
+This package is a carousel component for Angular using Material Design. With support for sprites image maps.
 
 Until `v1` is reached, breaking changes may be introduced.
 
@@ -73,6 +73,11 @@ import { MatCarouselSlide, MatCarouselSlideComponent } from '@ngmodule/material-
 | `overlayColor` | `string`  | Color of the slide's overlay. | `'#00000040'` |
 | `hideOverlay`  | `boolean` | Toggle overlay on/off.        | `false`       |
 | `disabled`     | `boolean` | Skip slide when navigating.   | `false`       |
+| `spriteOffsetX`| `number`  | Sprite pixel offset X.        | `0`           |
+| `spriteOffsetX`| `number`  | Sprite pixel offset Y.        | `0`           |
+| `spriteWidth`  | `number`  | Sprite width in pixels.       | `0`           |
+| `spriteHeight` | `number`  | Sprite height in pixels.      | `0`           |
+| `spriteCenter` | `boolean` | Center sprite.                | `true`        |
 
 ## Contributing
 ### How to help
