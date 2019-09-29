@@ -17,6 +17,7 @@
   "peerDependencies": {
     "@angular/material": "^7.0.0",
     "hammerjs": "^2.0.8",
-    "rxjs": "~6.3.3"
+    "rxjs": "~6.3.3",
+    "ngx-resize-observer": "^1.0.1"
   }
 }

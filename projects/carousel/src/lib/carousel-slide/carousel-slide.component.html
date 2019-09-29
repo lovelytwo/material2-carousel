@@ -1,10 +1,18 @@
 <ng-template>
-  <div class="carousel-slide" [style.background-image]="image">
-    <div class="carousel-slide-content"><ng-content></ng-content></div>
+  <div #carouselSlideHolder class="carousel-slide" (onResize)="onResize($event)">
+    <img #carouselSlideImage
+      class="carousel-slide-image"
+      [src]="image"
+      [style.transform]="spriteTransform"
+      (load)="onImageLoad()">
+    <div class="carousel-slide-content">
+      <ng-content>
+      </ng-content>
+    </div>
     <div
       *ngIf="!hideOverlay"
       class="carousel-slide-overlay"
-      [style.background-color]="overlayColor"
-    ></div>
+      [style.background-color]="overlayColor">
+    </div>
   </div>
 </ng-template>
